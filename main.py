@@ -35,7 +35,7 @@ model = "paraphrase-multilingual-MiniLM-L12-v2"
 mgr = SemanticGroupAssigner(embed_model_name=model,
                     similarity_threshold=0.9,
                     buffer_flush=2)
-mgr.build_from_json("/content/example.json")
+mgr.build_from_json("./example.json")
 
 # Add a new product real-time
 new_product = [

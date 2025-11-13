@@ -65,7 +65,7 @@ class SemanticGroupAssigner:
                 result[key] = value
         return result
 
-    def _clean_text(text: str) -> str:
+    def _clean_text(self, text: str) -> str:
         if text is None:
             return ""
         text = text.lower()

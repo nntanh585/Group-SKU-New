@@ -65,11 +65,12 @@ class SemanticGroupAssigner:
                 result[key] = value
         return result
 
-    def _clean_text(self, text: str) -> str:
+    def _clean_text(text: str) -> str:
         if text is None:
             return ""
         text = text.lower()
         text = re.sub(r"<.*?>", " ", text)
+        text = re.sub(r"\[.*?\]", " ", text) # Remove text in square brackets
         text = re.sub(r"[^\w\s]", " ", text) # remove punctuation
         text = re.sub(r"\s+", " ", text).strip() # remove extra whitespace
         return text

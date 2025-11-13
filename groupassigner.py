@@ -69,6 +69,7 @@ class SemanticGroupAssigner:
         if text is None:
             return ""
         text = text.lower()
+        text = re.sub(r"<.*?>", " ", text)
         text = re.sub(r"[^\w\s]", " ", text) # remove punctuation
         text = re.sub(r"\s+", " ", text).strip() # remove extra whitespace
         return text
